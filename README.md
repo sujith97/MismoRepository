@@ -13,7 +13,9 @@ Ultimately, MISMO Workbench could be a cloud-hosted tool that can be used for ex
 
 ## Installation
 This will install 'gulp', 'bower' globally. Then pulls other dependencies.
-	npm deps
+```bash
+npm deps
+```
 
 ## Usage
 This will be a web application but for now, it generates MISMO elements, complex types and simple types.
