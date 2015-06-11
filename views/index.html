@@ -6,16 +6,27 @@
 		<title>Mismo Workbench</title>
 		<link rel="icon" sizes="192x192" href="images/favicon.ico">
 		<!-- build:css stylesheets/vendor.min.css -->
-		<link rel="stylesheet" href="bower_components/semantic-ui/dist/semantic.min.css">
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="stylesheets/base.css">
 		<!-- endbuild -->
 	</head>
 	<body>
-		Hello World
+		<div class="head">
+			<div class="logo-section">
+				<div class="name">CAPCO</div>
+				<div class="bar"></div><div class="bar"></div><div class="bar"></div>
+			</div>
+			<div class="title">
+				MISMO Repository
+			</div>
+		</div>
+		<div class="content" data-ng-app="mismo.repository">
+			<div data-ui-view></div>
+		</div>
 		<!-- build:js javascripts/vendor.min.js -->
 		<!-- Place your libraries here. -->
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
-		<script src="bower_components/semantic-ui/dist/semantic.min.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script src="bower_components/angular/angular.min.js"></script>
 		<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 		<!-- endbuild -->
@@ -23,6 +34,11 @@
 		<!-- build:js javascripts/mismoworkbench.min.js -->
 		<!-- Place your MISMO Workbench scripts here. -->
 		<script src="javascripts/app.js"></script>
+		<script src="javascripts/controllers/homeController.js"></script>
+		<script src="javascripts/services/homeService.js"></script>
+		<script src="javascripts/controllers/mismoTypeController.js"></script>
+		<script src="javascripts/services/mismoTypeService.js"></script>
+		
 		<!-- endbuild -->
 	</body>
 </html>

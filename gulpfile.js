@@ -14,18 +14,18 @@ var LOCATIONS = {
 gulp.task('optimize', ['clean'], function() {
 	var assets = $.useref.assets({searchPath: ['public']});
 	return gulp.src('views/**/*.html')
-				// Place the HTML files which are served from NODE in /dist/views folder
-				.pipe($.if('*.html', $.rename(function (path) { path.dirname += "/views" })))
-				// Gather all the assets from HTML files
-				.pipe(assets)
-				// Concatinate and minify JS files
-				.pipe($.if('*.js', $.uglify()))
-				// Minify CSS
-				.pipe($.if('*.css', $.cssmin()))
-				.pipe(assets.restore())
-  			.pipe($.useref())
-  			// Store the production files in /dist folder
-  			.pipe(gulp.dest('dist'));
+        // Place the HTML files which are served from NODE in /dist/views folder
+        .pipe($.if('*.html', $.rename(function (path) { path.dirname += "/views" })))
+        // Gather all the assets from HTML files
+        .pipe(assets)
+        // Concatinate and minify JS files
+        .pipe($.if('*.js', $.uglify()))
+        // Minify CSS
+        .pipe($.if('*.css', $.cssmin()))
+        .pipe(assets.restore())
+        .pipe($.useref())
+        // Store the production files in /dist folder
+        .pipe(gulp.dest('dist'));
 });
 
 // Clean Output Directory
@@ -33,8 +33,8 @@ gulp.task('clean', del.bind(null, ['dist']));
 
 gulp.task('styles', function() {
 	return gulp.src(LOCATIONS.CSS_PREPROS)
-					.pipe($.stylus())
-					.pipe(gulp.dest(LOCATIONS.CSS_DESTINATION));
+        .pipe($.stylus())
+        .pipe(gulp.dest(LOCATIONS.CSS_DESTINATION));
 });
 
 // Lint JavaScript
@@ -56,7 +56,7 @@ gulp.task('serve:dev', ['styles', 'nodemon-dev'], function () {
   	proxy: "http://localhost:3000"
   });
 
-  gulp.watch(['views/**/*.html'], reload);
+  gulp.watch(['**/*.html'], reload);
   gulp.watch(['**/images/*.*'], reload);
   gulp.watch(['public/stylesheets/prepros/**/*.styl'], ['styles', reload]);
   gulp.watch(['public/javascripts/**/*.js'], ['jshint', reload]);
