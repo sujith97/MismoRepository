@@ -19,7 +19,7 @@
 	})
 	.run(function($rootScope) {
 		$rootScope.constants = {
-			serverAddress : 'http://localhost:3000'
+			serverAddress : 'https://powerful-ocean-9833.herokuapp.com'
 		}
 	})
 	.controller('appController', ['$scope', function($scope) {
