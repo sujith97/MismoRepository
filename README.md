@@ -20,5 +20,5 @@ npm deps
 ## Usage
 Development
 ```bash
-git serve:dev
+gulp serve:dev
 ```
