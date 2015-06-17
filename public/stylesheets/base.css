@@ -49,3 +49,9 @@ body .content .list-group {
 body .content .list-group .list-group-item {
   cursor: pointer;
 }
+.box {
+  background-color: #f5f5f5;
+}
+.selectable {
+  cursor: pointer;
+}

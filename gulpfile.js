@@ -48,7 +48,6 @@ gulp.task('jshint', function () {
     .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
 });
 
-
 // Watch Files For Changes & Reload
 gulp.task('serve:dev', ['styles', 'nodemon-dev'], function () {
   browserSync({
