@@ -2,7 +2,7 @@ var fileService = require('./file'),
 	parser = require('xml2json'),
 	fs = require('fs'),
 	path = require('path'),
-	$q = require('Q')
+	$q = require('q')
 
 function mismoService() {
 	var mismoData = null,

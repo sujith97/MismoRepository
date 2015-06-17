@@ -1,6 +1,6 @@
 var fs = require('fs'),
 	path = require('path'),
-	$q = require('Q');
+	$q = require('q');
 
 var fileService = function() {
 	var service = {
