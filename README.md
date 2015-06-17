@@ -18,5 +18,7 @@ npm deps
 ```
 
 ## Usage
-This will be a web application but for now, it generates MISMO elements, complex types and simple types.
-The XSD is converted to JSON file in resources folder.
+Development
+```bash
+git serve:dev
+```
