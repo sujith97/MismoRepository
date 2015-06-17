@@ -65,7 +65,7 @@ gulp.task('nodemon-dev', function (cb) {
   var called = false;
   return nodemon({
     script: 'bin/www',
-    env: { 'NODE_ENV': 'development' },
+    env: { 'NODE_ENV': 'production' },
     ignore: [
       '/public', '/dist'
     ]
