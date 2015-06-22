@@ -12,12 +12,12 @@
       </div>
     </div>
 
-    <div class="row" data-ng-show="mtCtrl.mismoType.description">
+    <div class="row">
       <div class="col-md-12">
         <div class="panel panel-default">
           <div class="panel-heading">Description</div>
           <div class="panel-body">
-            <div class="fixed-content">{{mtCtrl.mismoType.description}}</div>
+            <div class="fixed-content">{{mtCtrl.mismoType.description ? mtCtrl.mismoType.description : '!!! No Description provided'}}</div>
           </div>
         </div>
         
