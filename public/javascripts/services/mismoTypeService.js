@@ -10,7 +10,7 @@
 		return service;
 
 		function getType(mismoType) {
-			return $http.get($rootScope.constants.serverAddress + "/types/" + mismoType).then(function(data) {
+			return $http.get("/types/" + mismoType).then(function(data) {
 				return data.data;
 			});
 		}

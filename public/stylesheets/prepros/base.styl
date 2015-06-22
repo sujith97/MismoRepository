@@ -12,7 +12,7 @@ body
 		display inline-block
 		.logo-section
 			width 20%
-			font bold 1.6em/1.2 'Rajdhani', sans-serif
+			font bold 1.2em/1.2 'Rajdhani', sans-serif
 			color white
 			position relative
 			left 1%
@@ -20,30 +20,58 @@ body
 			padding 0.5% 0.5% 1% 0.5%
 			float left
 			.bar
-				height 20px
-				width 60px
+				height 13px
+				width 45px
 				background-color rgb(247, 247, 247)
+				margin-top -1px
 			.bar:nth-child(3)
-				height 50px
-				width 20px
+				height 45px
+				width 16px
 		.title
 			float right
 			text-align center
 			font bold 3.5em/1.2 'Roboto', sans-serif
-			margin-right 35%
-			padding-top 3%
+			margin-right 34%
+			padding-top 2%
 			color #FFFFFF
 			text-shadow 2px 2px #A0A0A0;
 	.content
 		margin-top 1%
 		padding 1%
-		font 1em/1.2 'Roboto', sans-serif
+		font 0.9em/1.2 'Roboto', sans-serif
+		.fixed-content
+			height 117px
+			overflow scroll
+			&.tab-pane
+				height 200px
+		.tab-content
+			border: 1px solid #E0E0E0;
+			border-top none
+			padding 1px 2%
+			margin-bottom 2%
 		.list-group
-			height 420px
+			height 434px
 			overflow scroll
 			.list-group-item
 				cursor pointer
-.box
-	background-color #F5F5F5
-.selectable
-	cursor pointer
+		.no-margin
+			padding 0
+			.input-group-addon
+				border none
+			input
+				border none
+				
+		.panel.plain
+			.panel-heading
+				border none
+				background none
+			.panel-body
+				.label-header
+					font-size 1em
+					margin 0
+				.table
+					margin 0
+		.box
+			background-color #F5F5F5
+		.selectable
+			cursor pointer

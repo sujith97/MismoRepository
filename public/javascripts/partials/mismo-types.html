@@ -1,53 +1,70 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">{{mtCtrl.mismoType.name}}</h3>
-  </div>
-  <div class="panel-body">
+<div class="row">
+  <div class="col-md-4">
     <div class="row">
-    	<div class="col-md-5">
-				<div class="box"></div>
-    	</div>
-    	<div class="col-md-7">
-				<div class="box"></div>
-    	</div>
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">{{mtCtrl.mismoType.name}}</div>
+        </div>
+        <div class="panel panel-default" data-ng-show="mtCtrl.mismoType.type">
+          <div class="panel-heading">Restriction</div>
+          <div class="panel-body">{{mtCtrl.mismoType.type}}</div>
+        </div>
+      </div>
     </div>
-    <div class="row">
-    	<div class="col-md-12">
-        <table class="table table-bordered" ng-if = "mtCtrl.mismoType.cType === 'SEQUENCE'">
-          <thead>
-            <tr>
-              <th>Member Name</th>
-              <th>Member Type</th>
-              <th>Min</th>
-              <th>Max</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr ng-repeat = "element in mtCtrl.mismoType.elements">
-              <td>{{element.name}}</td>
-              <td class="selectable" data-ng-click="homeCtrl.selectType(element.type)">{{element.type}}</td>
-              <td>{{element.minOccurs !== undefined ? element.minOccurs : '1'}}</td>
-              <td>{{element.maxOccurs !== undefined ? element.maxOccurs : '1'}}</td>
-            </tr>
-          </tbody>
-        </table>
-        
-        <table class="table table-bordered" ng-if = "mtCtrl.mismoType.cType === 'SIMPLE'">
-          <thead>
-            <tr>
-              <th>Member Name</th>
-              <th>Member Type</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>{{mtCtrl.mismoType.name}}</td>
-              <td>{{mtCtrl.mismoType.type}}</td>
-            </tr>
-          </tbody>
-        </table>
 
-    	</div>
+    <div class="row" data-ng-show="mtCtrl.mismoType.description">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">Description</div>
+          <div class="panel-body">
+            <div class="fixed-content">{{mtCtrl.mismoType.description}}</div>
+          </div>
+        </div>
+        
+      </div>
     </div>
+
+  </div>
+
+  <div class="col-md-8">
+    <ul class="nav nav-tabs" id="tabs">
+      <li role="presentation" class="active"><a href="#Attributes">Attributes</a></li>
+      <li role="presentation"><a href="#Groups">Groups</a></li>
+      <li role="presentation"><a href="#Enumerations">Enumerations</a></li>
+    </ul>
+    <div class="tab-content">
+      <div id="Attributes" class="tab-pane fade in active fixed-content">
+          
+      </div>
+      <div id="Groups" class="tab-pane fade fixed-content">
+          
+      </div>
+      <div id="Enumerations" class="tab-pane fade fixed-content">
+          
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-bordered" ng-if = "mtCtrl.mismoType.cType === 'SEQUENCE'">
+      <thead>
+        <tr>
+          <th>Member Name</th>
+          <th>Member Type</th>
+          <th>Min</th>
+          <th>Max</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat = "element in mtCtrl.mismoType.elements">
+          <td>{{element.name}}</td>
+          <td class="selectable" data-ng-click="homeCtrl.selectType(element.type)">{{element.type}}</td>
+          <td>{{element.minOccurs !== undefined ? element.minOccurs : '1'}}</td>
+          <td>{{element.maxOccurs !== undefined ? element.maxOccurs : '1'}}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>

@@ -8,10 +8,11 @@ var del = require('del');
 
 var LOCATIONS = {
 	CSS_PREPROS: "public/stylesheets/prepros/**/*.styl",
-	CSS_DESTINATION: "public/stylesheets/"
+	CSS_DESTINATION: "public/stylesheets/",
+  HTML_TEMPLATES: "public/javascripts/partials/*"
 }
 
-gulp.task('optimize', ['clean'], function() {
+gulp.task('optimize', ['clean', 'htmlTemplates'], function() {
 	var assets = $.useref.assets({searchPath: ['public']});
 	return gulp.src('views/**/*.html')
         // Place the HTML files which are served from NODE in /dist/views folder
@@ -30,6 +31,11 @@ gulp.task('optimize', ['clean'], function() {
 
 // Clean Output Directory
 gulp.task('clean', del.bind(null, ['dist']));
+
+gulp.task('htmlTemplates', function() {
+  return gulp.src(LOCATIONS.HTML_TEMPLATES)
+        .pipe(gulp.dest("dist/javascripts/partials/"));
+});
 
 gulp.task('styles', function() {
 	return gulp.src(LOCATIONS.CSS_PREPROS)
@@ -65,7 +71,7 @@ gulp.task('nodemon-dev', function (cb) {
   var called = false;
   return nodemon({
     script: 'bin/www',
-    env: { 'NODE_ENV': 'production' },
+    env: { 'NODE_ENV': 'development' },
     ignore: [
       '/public', '/dist'
     ]

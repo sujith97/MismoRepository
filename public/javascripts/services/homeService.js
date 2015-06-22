@@ -10,7 +10,7 @@
 		return service;
 
 		function getAllTypes() {
-			return $http.get($rootScope.constants.serverAddress + "/types/").then(function(data) {
+			return $http.get("/types/").then(function(data) {
 				return data.data;
 			});
 		}

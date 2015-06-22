@@ -1,6 +1,6 @@
 (function() {
 	angular.module("mismo.repository", ["ui.router", "home.controller", "mismotype.controller"])
-	.config(function($stateProvider, $urlRouterProvider) {
+	.config(["$stateProvider", "$urlRouterProvider", function($stateProvider, $urlRouterProvider) {
 	  
 	  $stateProvider
 	    .state('mismo', {
@@ -16,18 +16,15 @@
 	      controllerAs: 'mtCtrl'
 	    });
 	    $urlRouterProvider.otherwise('/mismo');
-	})
-	.run(function($rootScope) {
+	}])
+	.run(["$rootScope", function($rootScope) {
 		$rootScope.constants = {
 			serverAddress : 'https://powerful-ocean-9833.herokuapp.com'
 		}
-	})
+	}])
 	.controller('appController', ['$scope', function($scope) {
 		
 		
 	}])
 
 })();
-
-// https://interviewtracker.herokuapp.com
-// http://localhost:3000

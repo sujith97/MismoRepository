@@ -5,8 +5,17 @@
 	MismoTypeController.$inject = ["$state", "$stateParams", "mismoTypeService"];
 	function MismoTypeController($state, $stateParams, mismoTypeService) {
 		var vm = this;
+		$("#tabs a").click(function(e) {
+			e.preventDefault();
+			$(this).tab('show');
+		});
+
 		mismoTypeService.getType($stateParams.mismoType).then(function(data) {
 			var content = {};
+
+			if (data['xsd:annotation']) {
+				content.description = data['xsd:annotation']['xsd:documentation']['$t'];
+			}
 
 			if (data['xsd:sequence'] && Array.isArray(data['xsd:sequence']['xsd:element'])) {
 				content.cType = "SEQUENCE";
@@ -30,7 +39,6 @@
 			}
 			vm.mismoType = content;
 		});
-
 
 		function setType(req) {
 			if (req == 'xsd:string') {
