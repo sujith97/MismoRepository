@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
 @import url("https://fonts.googleapis.com/css?family=Rajdhani:400,500,600,700");
+@media (min-width: 501px), (max-width: 600px) {
+  body .head .title {
+    font: bold 3.3em/1.2 'Roboto', sans-serif;
+    margin-right: 33%;
+    padding-top: 2%;
+  }
+}
 body {
   box-sizing: border-box;
 }
@@ -32,9 +39,6 @@ body .head .logo-section .bar:nth-child(3) {
 body .head .title {
   float: right;
   text-align: center;
-  font: bold 3.5em/1.2 'Roboto', sans-serif;
-  margin-right: 34%;
-  padding-top: 2%;
   color: #fff;
   text-shadow: 2px 2px #a0a0a0;
 }
